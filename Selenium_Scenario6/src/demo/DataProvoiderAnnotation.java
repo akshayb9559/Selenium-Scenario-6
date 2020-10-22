@@ -6,11 +6,19 @@ import org.testng.annotations.Test;
 public class DataProvoiderAnnotation {
 
 	@Test(dataProvider = "details")
-	public void f(Integer id, String firstName, String lastName) {
+	public void f(String keyword) {
 
-		System.out.println(id);
-		System.out.println(firstName);
-		System.out.println(lastName);
+		WebDriver wd;
+		String url = "https://www.google.co.in";
+
+		System.setProperty("webdriver.chrome.driver", "D:\\Certification Data\\Selenium\\Driver\\chromedriver.exe");
+		wd = new ChromeDriver();
+		wd.get(url);
+		wd.manage().window().maximize();
+
+		wd.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys(keyword);
+
+		System.out.println("Data is send to google:- " + keyword);
 
 	}
 
