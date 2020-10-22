@@ -16,15 +16,10 @@ public class DataProvoiderAnnotation {
 
 	@DataProvider(name = "details")
 	public Object[][] details() {
-		Object[][] data = new Object[2][3];
-
-		data[0][0] = 1;
-		data[0][1] = "Akshay";
-		data[0][2] = "Bramhane";
-
-		data[1][0] = 2;
-		data[1][1] = "Mehul";
-		data[1][2] = "Wankhede";
+		Object[][] data=new Object[3][1];
+       		data[0][0]="JAVA";
+        	data[1][0]="C";
+        	data[2][0]="SELENIUM";
 
 		return data;
 	}
